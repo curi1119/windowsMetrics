@@ -22,6 +22,12 @@ scrape_configs:
   - job_name: "ohmgraphite"
     static_configs:
       - targets: ["host.docker.internal:4445"]
+  - job_name: "smokeping-prober"
+    scrape_interval: 5s
+    scrape_timeout: 5s
+    static_configs:
+      - targets: ["smokeping-prober:9374"]
+
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   # - job_name: "prometheus"
 

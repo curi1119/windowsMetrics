@@ -22,3 +22,15 @@ services:
     ports:
       - 3000:3000
     restart: always
+  smokeping-prober:
+    image: quay.io/superq/smokeping-prober:latest
+    container_name: smokeping-prober
+    user: root
+    command: >
+      "--privileged"
+      "--config.file=/smokeping-prove/config.yaml"
+    volumes:
+      - ./smokeping-prove:/smokeping-prove
+    ports:
+      - 9374:9374
+    restart: always
