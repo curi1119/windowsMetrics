@@ -1,0 +1,7 @@
+.envrc
+.vscode
+
+/grafana/*
+!/grafana/.keep
+/prometheus/*
+!/prometheus/prometheus.yml
